@@ -16,6 +16,8 @@ Despite the inherent difficulties of class imbalance and overlapping feature dis
 - **Imbalanced data:** Fraudulent transactions typically account for a small percentage of all transactions, leading to class imbalance that biases models towards the majority non-fraud class.
 - **Overlapping features:** Fraudulent transactions often share characteristics with legitimate ones, causing high false positive and false negative cases. Improved feature engineering is suggested to specific features, sucha as device fingerprints, transaction locations, or historical behaviors.
 
+![alt_text](models.png)
+
 ### Steps showing how the optimal SVM with class weight was built.
 
 from sklearn.utils.class_weight import compute_sample_weight
