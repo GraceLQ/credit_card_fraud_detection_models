@@ -40,8 +40,8 @@ print('ROC AUC score is:',svm_roc_auc)
 
 precision1, recall1, _ = precision_recall_curve(y_test,y_svm_score)
 
-svm_auprc = auc(recall, precision)
+svm_auprc = auc(recall1, precision1)
 
 print('AUPRC score is:',svm_auprc)
 
-**AUPRC score is: 0.2118035011470123**
+**AUPRC score is: 0.7692882671704621**
