@@ -4,7 +4,7 @@ This project focuses on building a machine learning model to detect credit card 
 
 By leveraging techniques like SMOTE for oversampling, StandardScaler, Normalizer, rigorous evaluation metrics such as AUPRC and ROC AUC, and experimenting with multiple models, this project demonstrates the application of data science methodologies to tackle real-world challenges.
 
-Despite the inherent difficulties of class imbalance and overlapping feature distributions, the project achieves significant improvements over baseline metrics and provides actionable insights for future enhancements.
+Despite the inherent difficulties of class imbalance and overlapping feature distributions, the project achieves significant improvements over baseline metrics and provides actionable insights for future enhancements. The SVM with class weight adjustment achieved the best results, with an ROC AUC of 0.988 and an AUPRC of 0.769, showing its ability to handle the class imbalance effectively and provide strong fraud detection performance.
 
 ## Key Techniques
 - Decision Tree and SVM Models: Implemented and tuned Decision Tree and Support Vector Machine (SVM) models to evaluate their ability to handle the imbalanced dataset.
