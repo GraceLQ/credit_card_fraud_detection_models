@@ -15,3 +15,24 @@ Despite the inherent difficulties of class imbalance and overlapping feature dis
 ## Key Obstacles and Improvement
 - **Imbalanced data:** Fraudulent transactions typically account for a small percentage of all transactions, leading to class imbalance that biases models towards the majority non-fraud class.
 - **Overlapping features:** Fraudulent transactions often share characteristics with legitimate ones, causing high false positive and false negative cases. Improved feature engineering is suggested to specific features, sucha as device fingerprints, transaction locations, or historical behaviors.
+
+### Steps showing how the optimal SVM with class weight was built.
+
+from sklearn.utils.class_weight import compute_sample_weight
+
+#only 0.17% among all observations are fraud transactions
+w_train = compute_sample_weight('balanced', y_train)
+
+from sklearn.svm import LinearSVC
+sklearn_svm = LinearSVC(random_state=35)
+sklearn_svm.fit(x_train, y_train, sample_weight=w_train)
+
+y_svm_score = sklearn_svm.decision_function(x_test) #get the confidence score
+svm_roc_auc = roc_auc_score(y_test,y_svm_score)
+print('ROC AUC score is:',svm_roc_auc)
+**ROC AUC score is: 0.9879755453054005**
+
+precision1, recall1, _ = precision_recall_curve(y_test,y_svm_score)
+svm_auprc = auc(recall, precision)
+print('AUPRC score is:',svm_auprc)
+**AUPRC score is: 0.2118035011470123**
